@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HomeExpenses.Data/bin/Debug
+/HomeExpenses.Data/obj/Debug
+/HomeExpenses.Web/Bin

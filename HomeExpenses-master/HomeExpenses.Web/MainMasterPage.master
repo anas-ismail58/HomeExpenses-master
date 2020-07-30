@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs" Inherits="MainMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body style="direction: rtl; text-align: right;">
+    <% if (Request.Cookies["UserId"] != null && !string.IsNullOrEmpty(Request.Cookies["UserId"].Value))
+        {
+            Response.Cookies.Clear();
+            Response.Cookies.Add(new System.Web.HttpCookie("UserId", Request.Cookies["UserId"].Value));
+            Response.Cookies["UserId"].Expires = DateTime.Now.AddDays(3);
+            Response.Cookies.Add(new System.Web.HttpCookie("ClientId", Request.Cookies["ClientId"].Value));
+            Response.Cookies["ClientId"].Expires = DateTime.Now.AddDays(3);
+            Response.Cookies.Add(new System.Web.HttpCookie("ClientCurrentDate", Request.Cookies["ClientCurrentDate"].Value));
+            Response.Cookies["ClientCurrentDate"].Expires = DateTime.Now.AddDays(3);
+            Response.Cookies.Add(new System.Web.HttpCookie("MonthlyBudget", Request.Cookies["MonthlyBudget"].Value));
+            Response.Cookies["MonthlyBudget"].Expires = DateTime.Now.AddDays(3);
+    %>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Items/AllItems.aspx">الاصناف</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Expenses/AllExpenses.aspx">المدفوعات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Users/AllUsers.aspx">المستخدمين</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Users/Logout.aspx">الخروج</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <% }
+        else if ((Request.Cookies["UserId"] == null || string.IsNullOrEmpty(Request.Cookies["UserId"].Value)) && !Request.Url.AbsoluteUri.ToLower().Contains("login.aspx"))
+        {
+            Response.Redirect("/Users/Login.aspx", false);
+        }
+    %>
+    <div class="container">
+        <form id="form2" runat="server">
+            <main role="main" class="pb-3">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </form>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - مدفوعات المنزل الشهرية
+        </div>
+    </footer>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js"></script>
+</body>
+</html>

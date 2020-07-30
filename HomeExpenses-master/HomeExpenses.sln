@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HomeExpenses", "HomeExpenses.Web\", "{8E65BB3B-78F8-4202-9AEC-91F139267225}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{a23f489d-4b54-4887-b2cb-53087f419253}|HomeExpenses.Data.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_16577"
+		Debug.AspNetCompiler.PhysicalPath = "HomeExpenses.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16577\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_16577"
+		Release.AspNetCompiler.PhysicalPath = "HomeExpenses.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16577\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "16577"
+		SlnRelativePath = "..\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeExpenses.Data", "HomeExpenses.Data\HomeExpenses.Data.csproj", "{A23F489D-4B54-4887-B2CB-53087F419253}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E65BB3B-78F8-4202-9AEC-91F139267225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E65BB3B-78F8-4202-9AEC-91F139267225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E65BB3B-78F8-4202-9AEC-91F139267225}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E65BB3B-78F8-4202-9AEC-91F139267225}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A23F489D-4B54-4887-B2CB-53087F419253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23F489D-4B54-4887-B2CB-53087F419253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23F489D-4B54-4887-B2CB-53087F419253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23F489D-4B54-4887-B2CB-53087F419253}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8833A01A-155B-4929-B1D4-F21A1D4C2F84}
+	EndGlobalSection
+EndGlobal
