@@ -16,7 +16,6 @@
             padding:100px 0 100px 0;
 
         }
-
     </style>
 
 </asp:Content>
